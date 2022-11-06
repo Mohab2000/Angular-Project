@@ -14,14 +14,18 @@ const SMALL_WIDTH_BREAKPOINT = 720;
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
-  public isScreenSmall: boolean = false;
-  users: Observable<User[]> | undefined;
+  public isScreenSmall: boolean;
+
+  users: Observable<User[]>;
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     private userService: UserService,
     private router: Router
   ) {}
-  @ViewChild(MatSidenav) sidenav: MatSidenav | undefined;
+
+  @ViewChild(MatSidenav) sidenav: MatSidenav;
+
   ngOnInit(): void {
     this.breakpointObserver
       .observe([`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`])
@@ -34,8 +38,7 @@ export class SidenavComponent implements OnInit {
 
     this.router.events.subscribe(() => {
       if (this.isScreenSmall) {
-        // TODO CLOSE OUR SIDENAV
-        this.sidenav?.close();
+        this.sidenav.close();
       }
     });
   }

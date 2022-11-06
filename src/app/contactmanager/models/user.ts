@@ -1,11 +1,11 @@
 import { Note } from './note';
 
 export class User {
-  id: number | undefined;
-  birthDate: Date | undefined;
-  name: string | undefined;
-  avatar: string | undefined;
-  bio: string | undefined;
+    id: number;
+    birthDate: Date;
+    name: string;
+    avatar: string;
+    bio: string;
 
-  notes: Note[] = [];
+    notes: Note[] = [];
 }
