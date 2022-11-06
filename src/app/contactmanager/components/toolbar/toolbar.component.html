@@ -1,5 +1,4 @@
 <mat-toolbar color="primary">
-
   <button mat-button class="sidenav-toggle" (click)="toggleSidenav.emit()">
     <mat-icon>menu</mat-icon>
   </button>
@@ -13,6 +12,6 @@
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item (click)="openAddContactDialog()">New Contact</button>
+    <button mat-menu-item (click)="toggleTheme.emit()">Toggle Theme</button>
   </mat-menu>
-
 </mat-toolbar>
